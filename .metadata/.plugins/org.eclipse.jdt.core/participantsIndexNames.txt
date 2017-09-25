@@ -1,0 +1,5 @@
+INDEX VERSION 1.126
+C:\Users\ksudheer\Desktop\Work\Personal\Java\Practice\SpringFit\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\496842142.index
+\FitnessTracker\src\main\java
+C:\Users\ksudheer\Desktop\Work\Personal\Java\Practice\SpringFit\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2739308642.index
+\FitnessTracker\src\main\resources

@@ -1,0 +1,42 @@
+package com.pluralsight.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.pluralsight.model.Activity;
+import com.pluralsight.model.FitnessMinutes;
+import com.pluralsight.service.ExerciseService;
+
+@Controller
+public class FitnessMinutesController {
+	
+		@Autowired
+		private ExerciseService exerciseservicetemp;
+	
+	
+		@RequestMapping(value="/addminutes")
+		public String addMinutes(@ModelAttribute("excercisemin") FitnessMinutes fitnessMinutes){
+//			FitnessMinutes fitnessMinutes = new FitnessMinutes();
+			System.out.println("Excercise Minutes:" + fitnessMinutes.getMinutes());
+			System.out.println("Excercise Type:" + fitnessMinutes.getActivity());
+			return "addMinutes";
+		}
+		
+//		@RequestMapping(value="/addmoreminutes")
+//		public String addMoreMinutes(@ModelAttribute("excercisemin") FitnessMinutes fitnessMinutes){
+////			FitnessMinutes fitnessMinutes = new FitnessMinutes();
+//			System.out.println("Excercise More Minutes:" + fitnessMinutes.getMinutes());
+//			return "addMinutes";
+//		}	
+		
+		@RequestMapping(value="/activities",method=RequestMethod.GET)
+		public @ResponseBody List<Activity> findAllActivites(){
+			return exerciseservicetemp.findAllActivities();
+		}
+}
